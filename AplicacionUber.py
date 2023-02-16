@@ -6,10 +6,12 @@ class AplicacionUber(object):
 
     def __init__(self, usuario):
         self.usuario = usuario
+
     def runApp(self):
         loop = asyncio.get_event_loop()
         loop.run_until_complete(self.pedirUber())
         loop.close()
+
     async def pedirUber(self):
         print("Buscando Uber mas cercano.")
         try:
@@ -23,8 +25,7 @@ class AplicacionUber(object):
 
     async def buscarUber(self):
         await asyncio.sleep(random.randint(1, 3))
-        uber = Uber("German", "REJ576", "Twingo")
-        return uber
+        return Uber("German", "REJ576", "Twingo")
 
     def getUsuario(self):
         return self.usuario

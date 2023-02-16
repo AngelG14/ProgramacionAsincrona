@@ -9,8 +9,7 @@ if __name__ == '__main__':
     app.runApp()
     print("Ejemplo thread")
     user = UsuarioPat("Oswaldo", 10721521)
-    dian = Dian(user.crearRut())
-    thread = ThreadRut(dian)
+    thread = ThreadRut(Dian(user.crearRut()))
     thread.start()
     print("Rut Enviado")
 
